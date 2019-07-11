@@ -2493,7 +2493,7 @@ static void smb358_external_power_changed(struct power_supply *psy)
                     current_limit = USB3_MAX_CURRENT_MA;
                  }
 		 // If Current 500mA then assume its USB2.0
-                 if ((prop.intval / 1000) == USB2_MAX_CURRENT_MA ) 
+                 else if ((prop.intval / 1000) == USB2_MAX_CURRENT_MA ) 
 		 {
 		    // Raise USB-Charging Current Maximum Supported
                     pr_info("Using USB Current (mA) %d\n", chrg_current);
