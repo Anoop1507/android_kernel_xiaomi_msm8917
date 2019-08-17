@@ -628,7 +628,7 @@ endif
 ifeq ($(COMPILER),clang)
 KBUILD_CFLAGS	+= -O3 -ferror-limit=200
 else
-KBUILD_CFLAGS	+= -O3 -ffast-math -funsafe-math-optimizations -march=armv8-a -mcpu=cortex-a53 -mtune=cortex-a53 -floop-nest-optimize -fgraphite-identity $(call cc-disable-warning,maybe-uninitialized,)
+KBUILD_CFLAGS	+= -O2  -march=armv8-a -mcpu=cortex-a53 -mtune=cortex-a53 $(call cc-disable-warning,maybe-uninitialized,)
 endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
